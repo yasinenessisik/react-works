@@ -8,10 +8,17 @@ var tweets = [
 ]
 var email = prompt("email ? :")
 var sifre = prompt("sifre ? :")
-
+function isUserExists(email,sifre){
+    for(i = 0; i<kullanicilar.length; i++){
+        if(email == kullanicilar[0].email && kullanicilar[0].sifre == sifre){
+            return true;
+        }
+    }
+    return false;
+}
 
 function giris(){
-    if(email == kullanicilar[0].email && kullanicilar[0].sifre == sifre){
+    if(isUserExists(email,sifre)){
         console.log(tweets)
     }else{
         console.log("Error")
